@@ -1,4 +1,4 @@
-\documentclass[turkish]{beamer}
+\documentclass[turkish,handout]{beamer}
 \usepackage{beamerthemesplit}
 \usepackage[latin5]{inputenc}
 \usepackage{graphicx}
@@ -18,56 +18,57 @@
 	\titlepage
 }
 
-\section[Ajanda]{}
+\section[Agenda]{}
 \frame{\tableofcontents}
-\section{Ben Kimim?}
+\section{Who am I?}
 	\frame
 	{
-	  \frametitle{Ben Neyim?}
+	  \frametitle{Who am I?}
 	 	\begin{itemize}
-		  \item<1-> Boðaziçi Üniv. Bilgisayar Müh. 4. sýnýf öðrencisi
-		  \item<2-> NHibernate ve Castle da (pasif) geliþtirici
-		  \item<3-> Kisisel blogunda ve Devlicio.us'ta (pasif) yazar
-		  \item<4-> Robotik konusuna meraklý
+		  \item<1-> Senior student at Bogazici University
+		  \item<2-> (Passive) committer at Castle and NHibernate
+		  \item<3-> Blogger at his own blog and also on devlicio.us
+		  \item<4-> Has an interest in Robotics and its applications
 	  \end{itemize}
 	}
 
-\section{Giriþ}
+\section{Introduction}
 	\subsection{Dependency Injection}
 		\frame
 		{
-		  \frametitle{DI Nedir?}
+		  \frametitle{What is DI all about?}
 		
 		  \begin{itemize}
-		  \item<1-> Martin Fowler'in makalesindeki bir patterndýr.
-		  \item<2-> Nesne baðýmlýlýklarýnýn dýþarýdan saðlanmasý esasýna dayanýr.
-		  \item<3-> 3 alt yapýdan oluþur
+		  \item<1-> It is a pattern in Martin Fowler's book
+		  \item<2-> Depends on the principle of providing dependencies from the outside
+		  \item<3-> Made up of 3 components
 			  \begin{itemize}
-			  	\item<4->Baðýmlý
-			  	\item<5->Baðlýlýk
-			  	\item<6->Baðýmlýlýðý saðlayan
+			  	\item<4->Dependent
+			  	\item<5->Dependency
+			  	\item<6->Dependency provider
 			  \end{itemize}
 		  \end{itemize}
 		}
 		\frame
 		{
-			\frametitle{Neden DI kullanmalýyýz?}
+			\frametitle{Why should we use DI?}
 		  \begin{itemize}
-		  	\item<1->Gevþek baðlý bileþenler
-		  	\item<2->Artan test edilebilirlik
-		  	\item<3->Çalýþma zamanlý deðiþikliklerde kolaylýk
+		  	\item<1->Loosely coupled components/services
+		  	\item<2->Increased testability
+		  	\item<3->Reduced cost of changes in later stages of development
+		  	\item<4->Ability to change implementations between testing and deployment
 		  \end{itemize}
 		}
 		\frame
 		{
-			\frametitle{Neden DI kullanmamalýyýz?}
+			\frametitle{Why should not we use DI?}
 		  \begin{itemize}
 		  	\item<1-> ...
 		  \end{itemize}
 		}
 		\frame
 		{
-			\frametitle{Dependency Injection Yöntemleri}
+			\frametitle{Dependency Injection Methods}
 		  \begin{itemize}
 		  	\item<1->Constructor Injection
 		  	\item<2->Property Injection
@@ -76,7 +77,7 @@
 		}
 		\frame
 		{
-			\frametitle{Dependency Injection Yöntemleri - Örnekler}
+			\frametitle{Dependency Injection Methods - Examples}
 		  \begin{itemize}
 		  	\item<1->Constructor Injection
 		  		\begin{center}
@@ -94,48 +95,48 @@
 		{
 			\frametitle{Inversion of Control Container}
 			\begin{itemize}
-				\item<1->Tüm servislerin kayýt altýna alýndýðý ve eriþilebildiði nokta.
-				\item<2->Baðýmlýlýk çözümlemesini otomatik yapan yazýlým bileþeni
-				\item<3->Yazýlým geliþtirmenin ilerleyen sürecinde baðýmlýlýklarýn kolay deðiþtirilebilmesi
+				\item<1->A point where all components are registered and being accessed
+				\item<2->A component which resolves dependencies of a requested component automatically
+				\item<3->Enables us to change implementations without much trouble
 			\end{itemize}
 		}
 \section{Castle Windsor}
-	\subsection{Neden Castle Windsor?}
+	\subsection{Why Castle Windsor?}
 			\frame
 			{
-				\frametitle{Neden Castle Windsor?}
+				\frametitle{Why Castle Windsor?}
 			  \begin{itemize}
-			  	\item<1->Çok kullanýlan bir framework
-			  	\item<2->Aktif geliþtirme
+			  	\item<1->A popular framework
+			  	\item<2->Active development
 			  	\begin{itemize}
-			  	  \item<3->Ekim 2009 - Subat 2010 döneminde 118 commit.   
-			  		\item<4->2. versiyon
+			  	  \item<3->118 commits between October 2009 and February 2010.   
+			  		\item<4->2nd version
 			  	\end{itemize}
-			  	\item<5->Frameworkü geniþletme konusunda esneklik
+			  	\item<5->Extensibility points
 			  \end{itemize}
 			}
-	\subsection{Konfigurasyon}
+	\subsection{Configuration}
 		\frame
 		{
-			\frametitle{Castle Windsor Konfigurasyonu}
+			\frametitle{Castle Windsor Configuration}
 			\begin{itemize}
-				\item<1->XML Konfigurasyon
-				\item<2->Fluent/Programatik Konfigurasyon
-				\item<3->Binsor/Boo Konfigurasyonu
+				\item<1->XML Configuration
+				\item<2->Fluent Configuration
+				\item<3->Binsor/Boo Configuration
 			\end{itemize}
 		}
 		\frame
 		{
-			\frametitle{XML Konfigurasyonu}
-			\begin{block}{Dezavantajlar}
+			\frametitle{XML Configuration}
+			\begin{block}{Cons}
 				\begin{itemize}
-					\item<1->Eski
-					\item<2->Hataya acýk
+					\item<1->Old school
+					\item<2->Error-prone
 				\end{itemize}
 			\end{block}
-			\begin{block}{Avantajlar}
+			\begin{block}{Pros}
 				\begin{itemize}
-				  \item<3->Derlemeden deðiþiklik yapýlabilme
+				  \item<3->Ability to change without compilation
 				\end{itemize}
 			\end{block}
 	
@@ -145,15 +146,15 @@
 		}
 	  \frame
 		{
-			\frametitle{Fluent/Programatik Konfigurasyon}
-			\begin{block}{Dezavantajlar}
+			\frametitle{Fluent/Programmatic Configuration}
+			\begin{block}{Cons}
 				\begin{itemize}
-					\item<1->Derleme sonrasýnda deðiþiklik yapýlmasý imkansýz/zor
+					\item<1->Very hard, if not impossible, to change after compilation
 				\end{itemize}
 			\end{block}
-			\begin{block}{Avantajlar}
+			\begin{block}{Pros}
 				\begin{itemize}
-					\item<2->Derleme zamanlý kontrol
+					\item<2->Compile time checking
 					\item<3->Intellisense
 					\item<4->AllTypes Of
 				\end{itemize}
@@ -161,53 +162,53 @@
 		}
 		\frame
 		{
-			\frametitle{Fluent/Programatik Konfigurasyon - Cont'd}
+			\frametitle{Fluent/Programmatic Configuration - Cont'd}
 			\begin{center}
 				\includegraphics[scale=0.40]{images/fluentconfiguration.png}
 			\end{center}
 		}
 		\frame
 		{
-			\frametitle{Boo/Binsor ile Konfigurasyon}
+			\frametitle{Boo/Binsor Configuration}
 			\begin{itemize}
-				\item<1->Derleme/Runtime zamanlý kontrol
+				\item<1->Compile/Runtime checking 
 				\item<2->Intellisense (MonoDevelop)
-				\item<3->Derleme sonrasýnda deðiþiklik yapýlmasý kolay
-				\item<4->Boo dilinin esnekliði ile Konfigurasyon geniþletilmesi
+				\item<3->Easy to change after compilation of application
+				\item<4->Easier configuration with the help of Boo extensibility(macros)
 			\end{itemize}
 			\begin{center}
 				\includegraphics[scale=0.40]{images/binsorconfiguration.png}
 			\end{center}
 		}
-	\subsection{Geniþletme Noktalarý}
+	\subsection{Extensibility points}
 		 \frame
 			{
-				\frametitle{Geniþletme Noktalarý}
+				\frametitle{Extensibility points}
 			  \begin{itemize}
-			  	\item<1->Facility yapýsý
-			  	\item<2->Eventler
-			  	\item<3->Baðýmlýlýk Çözümü Kontrol mekanizmalarý
+			  	\item<1->Facilities
+			  	\item<2->Events
+			  	\item<3->Dependency resolution control mechanisms
 			  	\begin{itemize}
 			  	  \item<4->Subdependency Resolver
 			  		\item<5->Handler Selector
 			  		\item<6->Interceptor Selector
 			  	\end{itemize}
-			  	\item<7->Yaþam döngüsü kontrol mekanizmalarý
-			  	\item<8->Bileþen yaratýmýný kontrol mekanizmalarý
+			  	\item<7->Lifestyle control mechanisms
+			  	\item<8->Object initialization control mechanisms
 			  \end{itemize}
 			}
-			\subsubsection{Facility Yapýsý}
+			\subsubsection{Facilities}
 				\frame
 				{
-					\frametitle{Facility Yapýsý}
+					\frametitle{Facilities}
 					\begin{itemize}
-						\item<1-> MK/Windsor'un ayarlanmasini saglayan yapilar
-						\item<2-> Belli bir amaca yönelik iþlemlerin tümünün toplandýðý yer
+						\item<1-> MK/Windsor's points of configurations
+						\item<2-> A point where a group of related configuration (microkernel) tasks take place
 					\end{itemize}
 			  }
 			  \frame
 				{
-					\frametitle{Mevcut Facility'ler}
+					\frametitle{Available Facilities}
 					\begin{itemize}
 						\item<1-> Active Record Integration
 						\item<2-> Automatic Transaction Management
@@ -219,7 +220,7 @@
 						\item<8-> WCF Facility
 					\end{itemize}
 				}
-			\subsubsection{Eventler}
+			\subsubsection{Events}
 				\frame
 				{
 					\frametitle{Eventler}
@@ -230,7 +231,7 @@
 						\item<4-> ComponentCreated
 						\item<5-> ComponentDestroyed
 						\item<6-> DependencyResolving
-						\item<7-> ve diðerleri
+						\item<7-> and several others
   				\end{itemize}
   				
 				}
@@ -241,10 +242,10 @@
 						\includegraphics[scale=0.40]{images/enrichwithfacility.png}
   				\end{center}
 				}
-			\subsubsection{Baðýmlýlýk Çözümü Kontrol Mekanizmalarý}
+			\subsubsection{Dependency resolution control mechanisms}
 				\frame
 				{
-					\frametitle{Baðýmlýlýk Çözümünü Kontrol Mekanizmalarý}
+					\frametitle{Dependency resolution control mechanisms}
 			  	\begin{itemize}
 			  	  \item<1->Subdependency Resolver
 			  		\item<2->Handler Selector
@@ -255,9 +256,9 @@
 				{
 					\frametitle{Subdependency Resolver}
 			  	\begin{itemize}
-			  	  \item<1->Bir bileþenin herhangi bir baðýmlýlýðýnýn nasýl çözülmesi gerektiðini anlatýr.
-			  		\item<2->Mevcut bir bileþen ile cevap verebilir ya da yeni bir nesne ile donebiliriz
-			  		\item<3->Daha önceden çözümlenmiþ baðýmlýlýklarda geçerli deðil (MEF?)
+			  	  \item<1->Tells \b{how} a specific dependency of a component should be resolved
+			  		\item<2->We can either use an existing component or create a new one as the dependency
+			  		\item<3->Does not affect previously initialized components (MEF can do it)
 			  	\end{itemize}
 			 }
 			 	\frame
@@ -274,15 +275,14 @@
 						\includegraphics[scale=0.40]{images/arrayresolver.png}
 					\end{center}
 					\newline
-					\b{Potansiyel sorun?}			  
+					\b{Spot the potential problem}			  
 				}				
 				\frame
 				{	
 					\frametitle{Handler Selector}
 			  	\begin{itemize}
-			  	  \item<1->Bir bileþenin nasýl çözümlenmesi gerektiðini belirtir
-			  		\item<2->Mevcut duruma göre baðýmlýlýklarýn deðiþtirilmesini saðlar
-			  		\item<3->Daha önceden çözümlenmiþ bileþenlerde geçerli deðil
+			  		\item<1->Allows us to specify what to return as a result of .Resolve<T> calls depending on context 
+			  		\item<2->Does not affect previously initialized components
 			  	\end{itemize}
 			 }
 			 	\frame
@@ -296,72 +296,71 @@
 				{
 					\frametitle{Interceptor Selector/Interceptor Model Selector/IProxyGeneration Hook}
 			  	\begin{itemize}
-			  	  \item<1->Bir bileþenle eþleþtirilmiþ cross-cutting concern'lerin runtime da deðiþtirilebilmesi
-			  		\item<2->Mevcut duruma göre bu interceptorlerin hangisinin seçileceðine karar verir
-			  		\item<3->Hangi metodlarýn intercept edilip edilmeyeceðine karar verilebilir
-			  		\item<4->Daha önceden çözümlenmiþ baðýmlýlýklarda geçerli deðil
+			  	  \item<1->Allows us to change cross-cutting concerns at runtime
+			  		\item<2->We can specify what interceptors should be attached
+			  		\item<3->Allows us to specify what methods to intercept
 			  	\end{itemize}
 			 }
-		\subsubsection{Yaþam Döngüsü Kontrol Mekanizmalarý}
+		\subsubsection{Lifestyle control mechanisms}
 			  \frame
 				{
-					\frametitle{Yaþam Döngüsü Kontrol Mekanizmalarý}
-					Bileþenlerin \b{ne zaman} yaratýlmalarý gerektiðine dair karar vericidirler.
+					\frametitle{Lifestyle control mechanisms}
+					Decides \b{when} to create a component
 			  	\begin{itemize}
 			  	  \item<1->Singleton
 			  	  \item<2->PerThread
 			  	  \item<3->PerWebRequest
 			  	  \item<4->Transient
 			  	  \item<5->Poolable
-			  	  \item<6->Özel
+			  	  \item<6->Custom
 			  	\end{itemize}
 			 }
 			 \frame
 			{
-				\frametitle{Mevcut Yaþam Döngüleri - Singleton}
+				\frametitle{Available Lifestyles - Singleton}
 				\begin{center}
 						\includegraphics[scale=0.50]{images/singletonlifestylemanager.png}
 				\end{center}
 	    }
-			\subsubsection{Bileþen Yaratýmýný Kontrol Mekanizmalarý}
+			\subsubsection{Component initialization control mechanisms}
 			  \frame
 				{
-					\frametitle{Bileþen Yaratýmýný Kontrol Mekanizmalarý}
-					Bileþenlerin nasýl yaratýlmalarý gerektiðine dair mantýpý içerirler. Castle literaturunde Activator olarak geçerler.
+					\frametitle{Component initialization control mechanisms}
+					Contains the logic related to creation of components. They are called Activators in Castle terms.
 			  	\begin{itemize}
-			  		\item<1->Default Activator (Esas injection iþinin yapýldýðý Activator tipi)
-			  		\item<2->Accessor/Factory Activator (Factory Support Facility'de kullanýlan Activator tipleri)
+			  		\item<1->Default Activator (The place where dependency injection basically takes place)
+			  		\item<2->Accessor/Factory Activator (Used by Factory Support Facility)
 			  	\end{itemize}
 			 }
 			 	\frame
 				{
-					\frametitle{Bileþen Yaratýmýný Kontrol Mekanizmalarý - Accessor Activator}
+					\frametitle{Component initialization control mechanisms - Accessor Activator}
 					\begin{center}
 							\includegraphics[scale=0.40]{images/accessoractivator.png}
 					\end{center}
 			  }
-	\section{Sonuç}
+	\section{Result}
 		 \frame
 		 {
-		  	\frametitle{DI Avantajlarý}
+		  	\frametitle{DI Advantages}
 				\begin{itemize}
-					\item<1->Uygulamada deðiþiklik yapmada çeviklik kazandýrýr
-			  	\item<2->Artan test edilebilirlik
-			  	\item<3->Yazýlýmda componentler seviyesinde düþünmemizi saðlar
+					\item<1->Reduced cost of change
+			  	\item<2->Increased testability
+			  	\item<3->Allows us to think in terms of component
 			  \end{itemize}
 			}
 			\frame
 		 {
 		  	\frametitle{Windsor}
 				\begin{itemize}
-					\item<1->Karþýlaþýlan sorunlara çözüm olarak geliþtirilmiþ bir framework
-			  	\item<2->Çeþitli diðer frameworklerle kolay entegrasyon
-			  	\item<3->Aktif geliþtirme grubu
+					\item<1->A framework that is developed as a result of needs
+			  	\item<2->Easy integration with other frameworks
+			  	\item<3->Active development
 			  \end{itemize}
 			}
 			\frame
 		 {
-		  	\frametitle{Kaynaklar}
+		  	\frametitle{Resources}
 				\begin{itemize}
 					\item<1->\href{http://castleproject.org}{http://castleproject.org}
 					\item<2->\href{http://groups.google.com/group/castle-project-users/}{http://groups.google.com/group/castle-project-users/}

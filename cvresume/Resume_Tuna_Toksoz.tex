@@ -1,0 +1,97 @@
+%% start of file `template_en.tex'.
+%% Copyright 2007 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+\moderncvtheme[red]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\recomputelengths                             % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Tuna}
+\familyname{Toksoz}
+%\title{Resumé title (optional)}               % optional, remove the line if not wanted
+\address{77 Massachusetts Avenue}{Cambridge, MA 02139}    % optional, remove the line if not wanted
+\mobile{+1-617-955-1196}                    % optional, remove the line if not wanted
+%\phone{312.996.2132}                      % optional, remove the line if not wanted
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{tuna@mit.edu}                      % optional, remove the line if not wanted
+%\extrainfo{additional information (optional)} % optional, remove the line if not wanted
+%\photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+\quote{"Eternal sunshine of the opensource mind"}                 % optional, remove the line if not wanted
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{Personal Statement}
+\cvline{}{MIT Engineer. Freshman graduate student working at Aerospace Controls Lab under supervision of Jonathan P. How. Autonomous systems enthusiast and a software engineer at the same time. His graduate work is on planning under uncertainity. Currently works on persistent search and tracking problems using Markov Decision Processes. Develops new technologies and simplifies complex problems. His computer scientist experience helps him implement technologies he develops. Open Source Software lover, and is a committer to several well-known projects. Believes in information sharing and actively participates in several mailing groups.}
+
+\section{Education}
+\cventry{2010--present}{SM, Aeronautics and Astronautics}{Massachusetts Institute of Technology}{USA}{}{\textbf{Concentration:} Autonomous Systems} %arguments 3 to 6 are optional
+\cventry{2005--2010}{BS, Computer Engineering with 1st rank}{Bogazici University}{Turkey}{}{} %arguments 3 to 6 are optional
+
+%\section{Master thesis}
+%\cvline{title}{\emph{Title}}
+%\cvline{supervisors}{Supervisors}
+%\cvline{description}{\small Short thesis abstract}
+\section{Research Interests}
+\cvline{}{Mult-vehicle health management, planning under uncertainity, autonomous systems, parallel computation, robotics}
+
+\section{Experience}
+\subsection{Research}
+\cventry{2010}{Research Assistant}{MIT}{MA}{}{Currently working on Multi-Vehicle Health Management.}               
+\cventry{2007}{Visiting Research Assistant}{Purdue University}{MA}{}{Worked on parallelization of resonnant tunnelling diodes simulator using MATLAB for Purdue University Clusters. Also worked on GUI implementation for the simulator.}                % arguments 3 to 6 are optional
+\subsection{Industry}
+\cventry{2008}{Software Engineer}{IBM}{Istanbul}{Turkey}{Developed football player performance monitor for a private TV channel. Also developed rack management application for internal use.}               
+\cventry{2007}{Visiting Research Assistant}{Purdue University}{MA}{}{Worked on parallelization of resonnant tunnelling diodes simulator using MATLAB for Purdue University Clusters. Also worked on GUI implementation for the simulator.}                % arguments 3 to 6 are optional
+\section{Publications} 
+
+\cventry{}{\textbf{T. Toksoz}, J. Redding, et. al.}{Automated Battery Swap and Recharge to Enable Persistent UAV Missions}{\emph{Proceedings of the Infotech@Aerospace 201}}{March 29--31, 2011. Submitted}{}
+\cventry{}{J. Redding, \textbf{T. Toksoz}, et. al.}{Distributed Multi-Agent Persistent Surveillance and Tracking With Health  Management}{\emph{Proceedings of the AIAA Guidance, Navigation, and Control Conference}}{August 8-11, 2011. Submitted}{}
+\section{Service}
+\cventry{Commiter}{NHibernate}{Opensource O/RM tool for .net platform}{}{}{}{}
+\cventry{Commiter}{Castle Project}{Opensource Application Framework for .net platform}{}{}{}{}
+\cventry{Contributor}{Player/Stage/Gazebo}{Opensource Robotics Platform}{}{}{}{}
+
+
+\section{Awards and Honors}
+\cventry{2007-2010}{db4o Most Valuable Professional}{by db4objects}{}{}{}{}
+\cventry{2005}{Ranked in the top 1000 among 1.6 million examinees in nationwide University Entrance Examinations}{}{}{}{}{}
+\cventry{2002}{Ranked in the top 100 among 900 thousand examinees in nationwide High School Entrance Examinations}{}{}{}{}{}
+
+\section{Computer skills}
+\cvcomputer{Programming Languages}{C$++$,C,C\#,Java,Python}{}{}
+\cvcomputer{Tools/Frameworks}{OpenCV,Eclipse,Visual Studio}{}{}
+\cvcomputer{Math Packages}{Matlab}{}{}
+\cvcomputer{Version Controlling}{Git,Mercurial,SVN}{}{}
+
+\closesection{}                   % needed to renewcommands
+\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+
+% Publications from a BibTeX file
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}       % 'publications' is the name of a BibTeX file
+
+\end{document}
+
+
+%% end of file `template_en.tex'.

@@ -7,7 +7,7 @@
 
 
 \documentclass[11pt,a4paper]{moderncv}
-
+\usepackage{hyperref}
 % moderncv themes
 \moderncvtheme[red]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
 %\moderncvtheme[green]{classic}                % idem
@@ -16,20 +16,16 @@
 \usepackage[utf8]{inputenc}                   % replace by the encoding you are using
 
 % adjust the page margins
-\usepackage[scale=0.8]{geometry}
+\usepackage[scale=0.85]{geometry}
 \recomputelengths                             % required when changes are made to page layout lengths
-
 % personal data
 \firstname{Tuna}
 \familyname{Toksoz}
 %\title{Resumé title (optional)}               % optional, remove the line if not wanted
-\address{77 Massachusetts Avenue}{Cambridge, MA 02139}    % optional, remove the line if not wanted
-\mobile{+1-617-955-1196}                    % optional, remove the line if not wanted
-%\phone{312.996.2132}                      % optional, remove the line if not wanted
-%\fax{fax (optional)}                          % optional, remove the line if not wanted
-\email{tuna@mit.edu}                      % optional, remove the line if not wanted
-%\extrainfo{additional information (optional)} % optional, remove the line if not wanted
-%\photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\address{77 Massachusetts Avenue, 33-326}{Cambridge, MA 02139}    % optional, remove the line if not wanted
+%\mobile{+1-617-955-1196}                    % optional, remove the line if not wanted
+%\email{tuna@mit.edu}                      % optional, remove the line if not wanted
+
 \quote{"Eternal sunshine of the opensource mind"}                 % optional, remove the line if not wanted
 
 %\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
@@ -40,57 +36,55 @@
 %----------------------------------------------------------------------------------
 \begin{document}
 \maketitle
-
+\section{Personal Information}
+\cvline{Date of Birth}{July 28, 1988}
+\cvline{Education Level}{MSc. Student at Aeronautics and Astronatics @ MIT. Expected graduation: 2012}
+\cvline{Contact}{\href{mailto:tuna@mit.edu}{tuna@mit.edu} +1-617-955-1196}
+\cvline{Web Site/Blog}{\href{http://tunatoksoz.devlicio.us}{tunatoksoz.devlicio.us}\hspace*{1cm}
+\href{http://tunatoksoz.com}{tunatoksoz.com}}
 \section{Personal Statement}
-\cvline{}{MIT Engineer. Master's student working at the Aerospace Controls Lab under the supervision of Jonathan P. How. Autonomous systems enthusiast and a software engineer at the same time. His graduate work is on planning under uncertainty applied to persistent search and tracking problems using Markov Decision Processes. Develops new technologies and simplifies complex problems. His computer scientist experience helps him implement technologies he develops. Open Source Software lover, and is a committer to several well-known projects. Believes in information sharing and actively participates in several mailing groups.}
-
+\cvline{}{MIT Engineer. Master's student working at the Aerospace Controls Lab under the supervision of Jonathan P. How. His graduate work is on planning under uncertainty applied to persistent search and tracking problem using Markov Decision Processes. Develops new technologies and simplifies complex problems using his computer scientist skills. Open Source lover, and a committer to well-known projects such as NHibernate and Castle. Actively participates in software related mailing groups and blogs as a writer in .net's biggest collaborative blog codebetter.com/devlicio.us}
 \section{Education}
 \cventry{2010--present}{SM, Aeronautics and Astronautics}{Massachusetts Institute of Technology}{USA}{}{} %arguments 3 to 6 are optional
 \cvline{}{\textbf{Concentration: }}{Autonomous Systems, Multi-vehicle Health Management}
 \cvline{}{\textbf{Supervisor: }}{Prof. Jonathan P. How}
-\cventry{2005--2010}{BS, Computer Engineering.}{Bogazici University}{Turkey}{Graduated with first rank from school of engineering}{} %arguments 3 to 6 are optional
-
-%\section{Master thesis}
-%\cvline{title}{\emph{Title}}
-%\cvline{supervisors}{Supervisors}
-%\cvline{description}{\small Short thesis abstract}
+\cventry{2005--2010}{BS, Computer Engineering.}{Bogazici University}{Turkey}{Graduated with first rank from the School Of Engineering. GPA 4.00/4.00}{}
 \section{Research Interests}
-\cvline{}{Multi-vehicle health management, planning under uncertainty, autonomous systems, parallel computation, robotics}
-
+\cvline{}{Multi-vehicle health management, planning under uncertainty, autonomous systems, parallel computation, robotics, distributed systems}
 \section{Experience}
-\subsection{Research}
-\cventry{2009, 2010}{Research Assistant}{MIT}{MA}{}{Currently working on Multi-Vehicle Health Management and its applications for persistent-search and track tasks. }               
-\cventry{2007}{Visiting Research Assistant}{Purdue University}{IN}{}{Worked on parallelization of a resonant tunneling diodes simulator using MATLAB for Purdue University Clusters. Also worked on GUI implementation for the simulator.}                % arguments 3 to 6 are optional
-\subsection{Industry}
-\cventry{2008}{Software Engineer}{IBM}{Istanbul}{Turkey}{Developed a football player performance monitor for a private TV channel. Also developed a rack management application for internal use.}               
-                % arguments 3 to 6 are optional
-
+\cventry{2010-2012}{Research Assistant}{MIT}{MA}{}{Currently working on Multi-Vehicle Health Management and its applications for persistent-search and track tasks. Using Python and C++, implemented a health-aware MDP backed mission planner for multi-UAV and multi-UGV missions.}   
+\cventry{2009, 2010}{Software Engineer, Intern}{MIT}{MA}{}{Worked on a path planner using RRT with Java language. Also worked on LiveLAB 3D project which mimics ACL's RAVEN environment. The project was implemented using XNA and C\#.}
+\cventry{2008}{Software Engineer}{IBM}{Istanbul}{Turkey}{Developed a football player performance monitor for a private TV channel. Also developed a rack management application for internal use.}
+\cventry{2007}{Visiting Research Assistant}{Purdue University}{IN}{}{Worked on parallelization of a resonant tunneling diodes simulator using MATLAB for Purdue University Clusters. Also worked on GUI implementation for the simulator.}
 \section{Publications} 
 \cventry{}{J. Redding, \textbf{T. Toksoz}, et. al.}{Proceedings of the AIAA Guidance, Navigation, and Control Conference}{\emph{Proceedings of the AIAA Guidance, Navigation, and Control Conference}}{August 8-11, 2011}{}
 \cventry{}{\textbf{T. Toksoz}, J. Redding, et. al.}{Automated Battery Swap and Recharge to Enable Persistent UAV Missions}{\emph{Proceedings of the Infotech@Aerospace 2011}}{March 29--31, 2011}{}
-\section{Service}
-\cventry{Committer}{NHibernate}{Opensource O/RM tool for .net platform. It provides a framework for mapping an object-oriented domain model to a traditional relational database. Responsibilities include implementation of Language Integrated Query provider, general maintenance of the code and implementation of new features and performance improvements. }{}{}{}{}
-\cventry{Committer}{Castle Project}{Opensource Application Framework for .net platform. Includes an inversion of control container, a web application framework and several other tools. Responsibilities include implementing new features in IoC container, maintaining and improving NHibernate Facility.}{}{}{}{}
+\section{Projects}
+\cventry{}{Multi-vehicle Health Management}{Designed and implemented decision making software for a team of unmanned ground and aerial vehicles that improves mission-level functional reliability through self-awareness. Also done embedded/realtime system development for flight tests}{}{}{}{}
+\cventry{}{Keeping Tabs}{Currently working on an an Android application that helps people to keep track of their tabs and personal expenses. Still in early phases of development}{}{}{}{}
+\cventry{}{Live Lab 3D}{Designed and implemented a 3D simulation environment that mimics the functionality available in ACLs RAVEN. Used Visual C\# with Microsoft XNA. Also implemented similar functionality using Python for general lab use}{}{}{}{}
+\cventry{}{Path Planner}{Designed and implemented path planning algorithms on Robotino platform using Player/Stage/Gazebo for senior project. Algorithms varied from RRT to Potential Field and PRMs. Extended to account for environment uncertainity}{}{}{}{}
+\section{Open-Source Projects}
+\cventry{Committer}{NHibernate}{Opensource O/RM tool for .net platform. It provides a framework for mapping an object-oriented domain model to a traditional relational database. Responsibilities include implementation of Language Integrated Query provider, general maintenance of the code and implementation of new features and performance improvements}{}{}{}{}
+\cventry{Committer}{Castle Project}{Opensource Application Framework for .net platform. Includes an inversion of control container, a web application framework and several other tools. Responsibilities include implementing new features in IoC container, maintaining and improving NHibernate Facility}{}{}{}{}
 \cventry{Contributor}{Player/Stage/Gazebo}{Opensource Robotics Platform}{}{}{}{}
-
-
 \section{Awards and Honors}
-\cventry{2010}{Graduated with 1st rank from School of Engineering of Bogazici University}{}{}{}{}{}
+\cventry{2010}{Graduated with 1st rank from School of Engineering of Bogazici University. GPA 4.00/4.00}{}{}{}{}{}
 \cventry{2007-2010}{db4o Most Valuable Professional}{by db4objects}{}{}{}{}
 \cventry{2005}{Ranked in the top 1000 among 1.6 million examinees in nationwide University Entrance Examinations}{}{}{}{}{}
 \cventry{2002}{Ranked in the top 100 among 900 thousand examinees in nationwide High School Entrance Examinations}{}{}{}{}{}
-
-\section{Computer skills}
-\cventry{Programming Languages}{C\#, C$++$, Python, C, Java}{}{}{}{}{}
-\cventry{Tools/Frameworks}{OpenCV, Eclipse, Visual Studio,  NHibernate}{}{}{}{}{}
-\cventry{Math Packages}{Matlab}{}{}{}{}{}
-\cventry{Version Controlling}{SVN, Git, Mercurial}{}{}{}{}{}
-
+\section{Engineering Skills}
+\cventry{Languages}{C\#, C$++$, Python, C, Java, R, MATLAB.}{}{}{}{}{}
+\cventry{Unit Testing}{XUnit, NUnit, MSTest, VSTS, Rhino Mocks, Moq}{}{}{}{}{}
+\cventry{DI/IoC/AOP}{Castle, Postsharp, Unity}{}{}{}{}{}
+\cventry{DB Related}{MSSQL, Db4o, SQLite, NHibernate, Entity Framework}{}{}{}{}{}
+\cventry{Platforms}{Windows, Linux (Fedora, Ubuntu)}{}{}{}{}{}
+\cventry{SCMs}{SVN, Git}{}{}{}{}{}
+\section{Interests}
+\cventry{}{Skating, basketball, kite flying and cranking up software ideas and prototyping them}{}{}{}{}{}
 \section{References}
-
 \cventry{}{\textbf{Turker Keskinpala}}{Program Manager at Microsoft}{turkerkeskinpala@gmail.com}{}{}
-\cventry{}{\textbf{Christopher Bennage}}{Program Manager at Microsoft}{bennage@gmail.com}{}{}
-
+\cventry{}{\textbf{Christopher Bennage}}{Software Development Engineer 2 at Microsoft}{bennage@gmail.com}{}{}
 \closesection{}                   % needed to renewcommands
 \renewcommand{\listitemsymbol}{-} % change the symbol for lists
 
